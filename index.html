@@ -78,14 +78,14 @@
     document.getElementById("viewer").appendChild(renderer.domElement);
 
     const light = new THREE.HemisphereLight(0xffffff, 0x444444);
-    light.position.set(0, 0, 0);
+    light.position.set(20, 0, 20);
     scene.add(light);
 
     const loader = new THREE.GLTFLoader();
     loader.load('bouquet.glb', function(gltf) {
       const model = gltf.scene;
-      model.scale.set(40, 40, -40);       // Big bouquet
-      model.position.set(20, 20, 20);      // Lowered to be fully visible
+      model.scale.set(40, 0, -40);       // Big bouquet
+      model.position.set(20, 20, 50);      // Lowered to be fully visible
       scene.add(model);
     }, undefined, function(error) {
       console.error(error);
